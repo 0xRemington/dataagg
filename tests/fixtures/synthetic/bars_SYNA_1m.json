@@ -1,0 +1,326 @@
+{
+  "advertised_delay_seconds": null,
+  "correlation_id": "corr-bars",
+  "coverage": {
+    "completeness_confidence": "unknown",
+    "discovery_at": null,
+    "empty_reason": null,
+    "exclusions_by_reason": {},
+    "expected_sides": [],
+    "observed_sides": [],
+    "requested_end": "2025-03-07T14:45:00Z",
+    "requested_expiries": [],
+    "requested_start": "2025-03-07T14:30:00Z",
+    "returned_expiries": [],
+    "rows_after_filters": 15,
+    "rows_before_filters": 15,
+    "scope_complete": false,
+    "source_schema_fingerprint": "fake-bars/1:09d54b2b2266af11"
+  },
+  "failures": [],
+  "fetch_completed_at": "2025-03-07T15:00:02.250000Z",
+  "fetch_started_at": "2025-03-07T15:00:01.500000Z",
+  "payload": {
+    "byte_count": 1103,
+    "parser_version": "fake-parser/2",
+    "representation": "synthetic",
+    "sha256": "2e108f3e3bb55969d55c792cbfdca3cce146ce98a14dc29cba4b11106d5387aa"
+  },
+  "provider_id": "fake",
+  "rejected": [],
+  "request_counts": {
+    "endpoint_requests": 1,
+    "transport_requests": 1
+  },
+  "response_id": "3bcf6b63-c049-44c9-ba1b-6f359d50c452",
+  "rows": [
+    {
+      "close": "255.09",
+      "high": "255.1",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:31:00Z",
+      "interval_start": "2025-03-07T14:30:00Z",
+      "low": "254.99",
+      "open": "255.08",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 1416
+    },
+    {
+      "close": "255.22",
+      "high": "255.23",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:32:00Z",
+      "interval_start": "2025-03-07T14:31:00Z",
+      "low": "255.01",
+      "open": "255.09",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 4521
+    },
+    {
+      "close": "255.2",
+      "high": "255.3",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:33:00Z",
+      "interval_start": "2025-03-07T14:32:00Z",
+      "low": "255.15",
+      "open": "255.22",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 1428
+    },
+    {
+      "close": "255.03",
+      "high": "255.23",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:34:00Z",
+      "interval_start": "2025-03-07T14:33:00Z",
+      "low": "255.02",
+      "open": "255.2",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 1624
+    },
+    {
+      "close": "255.03",
+      "high": "255.07",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:35:00Z",
+      "interval_start": "2025-03-07T14:34:00Z",
+      "low": "254.93",
+      "open": "255.03",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 4009
+    },
+    {
+      "close": "255.06",
+      "high": "255.16",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:36:00Z",
+      "interval_start": "2025-03-07T14:35:00Z",
+      "low": "254.98",
+      "open": "255.03",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 1629
+    },
+    {
+      "close": "254.97",
+      "high": "255.08",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:37:00Z",
+      "interval_start": "2025-03-07T14:36:00Z",
+      "low": "254.88",
+      "open": "255.06",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 4089
+    },
+    {
+      "close": "255.03",
+      "high": "255.1",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:38:00Z",
+      "interval_start": "2025-03-07T14:37:00Z",
+      "low": "254.9",
+      "open": "254.97",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 3784
+    },
+    {
+      "close": "254.91",
+      "high": "255.11",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:39:00Z",
+      "interval_start": "2025-03-07T14:38:00Z",
+      "low": "254.82",
+      "open": "255.03",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 4955
+    },
+    {
+      "close": "254.9",
+      "high": "254.91",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:40:00Z",
+      "interval_start": "2025-03-07T14:39:00Z",
+      "low": "254.9",
+      "open": "254.91",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 3704
+    },
+    {
+      "close": "255.01",
+      "high": "255.02",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:41:00Z",
+      "interval_start": "2025-03-07T14:40:00Z",
+      "low": "254.86",
+      "open": "254.9",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 2610
+    },
+    {
+      "close": "254.87",
+      "high": "255.09",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:42:00Z",
+      "interval_start": "2025-03-07T14:41:00Z",
+      "low": "254.86",
+      "open": "255.01",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 5424
+    },
+    {
+      "close": "254.79",
+      "high": "254.97",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:43:00Z",
+      "interval_start": "2025-03-07T14:42:00Z",
+      "low": "254.77",
+      "open": "254.87",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 1604
+    },
+    {
+      "close": "254.9",
+      "high": "254.97",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:44:00Z",
+      "interval_start": "2025-03-07T14:43:00Z",
+      "low": "254.7",
+      "open": "254.79",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 1732
+    },
+    {
+      "close": "254.82",
+      "high": "254.95",
+      "instrument": {
+        "exchange_mic": null,
+        "provider_id": "fake",
+        "symbol": "SYNA"
+      },
+      "interval_end": "2025-03-07T14:45:00Z",
+      "interval_start": "2025-03-07T14:44:00Z",
+      "low": "254.79",
+      "open": "254.9",
+      "price_basis": "provider_native",
+      "quality_flags": [],
+      "session_date": "2025-03-07",
+      "session_kind": "RTH",
+      "timeframe": "1m",
+      "volume": 1122
+    }
+  ],
+  "schema_version": 1,
+  "source_fingerprint": "fake-bars/1:09d54b2b2266af11",
+  "status": "complete"
+}

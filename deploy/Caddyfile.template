@@ -1,0 +1,35 @@
+# Public entry point on :8000 (operator decision 2026-10-26: reachable on the VPS's IPv4).
+# deploy/setup_secrets.sh renders this into secrets/Caddyfile with the dashboard
+# password hash; the rendered file is never committed.
+#
+#   /v1/*, /health/*  -> research API (its own bearer-token auth; health has no secrets)
+#   everything else   -> dashboard, behind HTTP basic auth
+#
+# Plain HTTP: credentials and data cross the network unencrypted. Prefer the Tailscale
+# address, or add a domain so Caddy can obtain a TLS certificate.
+{
+	admin off
+	auto_https off
+}
+
+:8000 {
+	encode gzip
+	header -Server
+
+	@api path /v1/* /health/*
+	handle @api {
+		reverse_proxy api:8000
+	}
+
+	handle {
+		basic_auth {
+			__UI_USER__ __UI_PASSWORD_HASH__
+		}
+		reverse_proxy ui:8501
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}

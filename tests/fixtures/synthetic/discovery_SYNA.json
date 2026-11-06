@@ -1,0 +1,31 @@
+{
+  "correlation_id": "corr-discover",
+  "expirations": [
+    "2025-03-14",
+    "2025-04-11",
+    "2025-05-09",
+    "2025-07-11"
+  ],
+  "fetch_completed_at": "2025-03-07T15:00:00.750000Z",
+  "fetch_started_at": "2025-03-07T15:00:00Z",
+  "instrument": {
+    "exchange_mic": null,
+    "provider_id": "fake",
+    "symbol": "SYNA"
+  },
+  "payload": {
+    "byte_count": 128,
+    "parser_version": "fake-parser/2",
+    "representation": "synthetic",
+    "sha256": "fba476984d18ac3b0eaa9749ac7a4561c3d30e5ba651e14fb14afe03745f4175"
+  },
+  "provider_id": "fake",
+  "request_counts": {
+    "endpoint_requests": 1,
+    "transport_requests": 1
+  },
+  "response_id": "c8cfcbf7-9a68-4cde-aa52-5cb36b1ea92f",
+  "schema_version": 1,
+  "source_fingerprint": "fake-discovery/1:04a31ab59b8ca82e",
+  "underlying_reference_price": "254.51"
+}

@@ -1,0 +1,73 @@
+{
+  "release_allowed": false,
+  "checked_at": "2026-10-31T02:01:07.284013+00:00",
+  "report": "reports/pilot",
+  "acceptance_manifest": "reports/acceptance/20261026T025535Z-fixture/manifest.json",
+  "gates": [
+    {
+      "gate": "capacity_report_present",
+      "passed": true,
+      "detail": "reports/pilot/capacity.json"
+    },
+    {
+      "gate": "live_source_measured",
+      "passed": true,
+      "detail": "provider='yahoo'; fixture data cannot release the live MVP"
+    },
+    {
+      "gate": "five_sessions",
+      "passed": true,
+      "detail": "5 sessions with recorded requests"
+    },
+    {
+      "gate": "source_review_approved",
+      "passed": true,
+      "detail": "reports/feasibility/live/yahoo/source-review.md: needs 'Release decision: APPROVED' and no UNRESOLVED item"
+    },
+    {
+      "gate": "acceptance_signed_off",
+      "passed": true,
+      "detail": "reports/acceptance/20261026T025535Z-fixture/manifest.json"
+    },
+    {
+      "gate": "offsite_restore_drill",
+      "passed": true,
+      "detail": "A07 restore measured in acceptance and a verified backup taken during a pilot session"
+    },
+    {
+      "gate": "priority_chain_coverage",
+      "passed": true,
+      "detail": "min per-scope on-time coverage 0.9871794871794872 (>= 0.95); skipped slots counted: 0"
+    },
+    {
+      "gate": "skipped_scopes_counted",
+      "passed": true,
+      "detail": "every session reports its skipped/shed slots"
+    },
+    {
+      "gate": "minute_coverage",
+      "passed": false,
+      "detail": "min 0.8307692307692308 (>= 0.99)"
+    },
+    {
+      "gate": "processing_lag",
+      "passed": true,
+      "detail": "worst p95 4.817308000000001s (<= 5.0s)"
+    },
+    {
+      "gate": "disk_headroom",
+      "passed": true,
+      "detail": "projected 192.02132923405202 days (>= 30.0)"
+    },
+    {
+      "gate": "request_budget",
+      "passed": true,
+      "detail": "planned utilisation 0.4123 (<= 0.7); peak 10.9/min (<= cap 10 + burst 1)"
+    },
+    {
+      "gate": "no_execution_grade_freshness_claim",
+      "passed": true,
+      "detail": "event-time known ratio 0.0; claim collection_cadence_only"
+    }
+  ]
+}

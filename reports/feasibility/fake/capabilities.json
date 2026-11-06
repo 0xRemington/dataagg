@@ -1,0 +1,213 @@
+{
+  "actions": {
+    "checked_at": "2026-10-24T00:00:00Z",
+    "confidence": "synthetic",
+    "evidence": "marketagg.providers.fake (synthetic)",
+    "status": "supported"
+  },
+  "bars": {
+    "15m": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "synthetic",
+        "evidence": "marketagg.providers.fake (synthetic)",
+        "status": "unsupported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    },
+    "1d": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "synthetic",
+        "evidence": "marketagg.providers.fake (synthetic)",
+        "status": "supported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    },
+    "1m": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "synthetic",
+        "evidence": "marketagg.providers.fake (synthetic)",
+        "status": "supported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    },
+    "4h": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "synthetic",
+        "evidence": "marketagg.providers.fake (synthetic)",
+        "status": "unsupported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    },
+    "5m": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "synthetic",
+        "evidence": "marketagg.providers.fake (synthetic)",
+        "status": "unsupported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    }
+  },
+  "capability_version": "fake-capabilities/1",
+  "contract_reference": {
+    "deliverable": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    },
+    "exercise_style": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    },
+    "expiry_cutoff": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    },
+    "multiplier": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    }
+  },
+  "entitlements": {
+    "automated_collection_allowed": null,
+    "display_allowed": null,
+    "export_allowed": null,
+    "max_retention_days": null,
+    "notes": "Synthetic data only; confers no market-data rights.",
+    "review_expires_at": null,
+    "review_id": null,
+    "reviewed": false
+  },
+  "options": {
+    "current_chain": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "supported"
+    },
+    "historical_snapshots": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "unsupported"
+    },
+    "streaming_quotes": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "unsupported"
+    }
+  },
+  "provider_id": "fake",
+  "quotes": {
+    "event_time": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "unsupported"
+    },
+    "replay": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "unsupported"
+    },
+    "sequence": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "unsupported"
+    },
+    "sizes": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "unsupported"
+    }
+  },
+  "reliability_tier": "synthetic",
+  "request_limits": {
+    "evidence": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    },
+    "max_concurrency": null,
+    "max_subscriptions": null,
+    "requests_per_minute": null
+  },
+  "schema_version": 1,
+  "semantics": {
+    "adjustment_basis": "provider_native",
+    "evidence": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "supported"
+    },
+    "oi_semantics": null,
+    "session_coverage": [
+      "RTH"
+    ],
+    "volume_semantics": "session_cumulative"
+  },
+  "synthetic": true,
+  "timing": {
+    "advertised_delay_seconds": null,
+    "delay_kind": "synthetic",
+    "evidence": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "synthetic",
+      "evidence": "marketagg.providers.fake (synthetic)",
+      "status": "supported"
+    },
+    "timestamp_precision": "unknown"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "a07_rpo_known_at_max": "2025-03-07 15:29:01.500000+00:00",
+  "a07_rpo_note": "logical nightly backup; RPO equals time since last backup",
+  "a07_rto_seconds": 0.896,
+  "a07_restore_seconds": 0.849,
+  "a07_objects_restored": 161,
+  "a07_dataset_sha256": "aac832633113d73351259447f0d2379e21a49316e3023c69a9f686edeb7a7503",
+  "a07_restored_database": "marketagg_test_dr_8153e06e"
+}

@@ -1,0 +1,26 @@
+# Python / tooling
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Secrets and local configuration: never commit
+.env
+.env.*
+!.env.example
+secrets/
+*.key
+*.pem
+
+# Runtime data, spools and restricted payloads
+data/
+spool/
+archives/
+exports/
+*.parquet
+!tests/fixtures/**/*.parquet

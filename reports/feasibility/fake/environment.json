@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2025-03-07T15:00:00Z",
+  "clock": "fixed synthetic clock",
+  "evidence_kind": "synthetic dry run (no network)",
+  "implementation": "CPython",
+  "packages": {
+    "exchange-calendars": "4.13.2",
+    "marketagg": "0.1.0",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "pydantic": "2.14.1",
+    "yfinance": "1.7.0"
+  },
+  "platform": "Linux x86_64",
+  "provider": "fake",
+  "python": "3.12.13",
+  "symbols": [
+    "SYNA",
+    "SYNB"
+  ]
+}

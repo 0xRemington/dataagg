@@ -1,0 +1,438 @@
+{
+  "format": "marketagg-capacity/1",
+  "measured_at": "2026-10-31T02:01:02.015227+00:00",
+  "provider_id": "yahoo",
+  "live_source": true,
+  "requests_per_minute_configured": 10,
+  "sessions": [
+    {
+      "session_date": "2026-10-26",
+      "open_at": "2026-10-26T13:30:00+00:00",
+      "close_at": "2026-10-26T20:00:00+00:00",
+      "requests": {
+        "endpoint": 1553,
+        "transport": 0,
+        "runs": 1388,
+        "effective_per_minute": 3.451,
+        "session_per_minute": 3.982,
+        "peak_per_minute": 10.88
+      },
+      "errors": {
+        "unavailable": 3
+      },
+      "chain_scopes": [
+        {
+          "symbol": "QQQ",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 77,
+          "coverage": 0.9871794871794872
+        },
+        {
+          "symbol": "SPY",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        }
+      ],
+      "skipped_slots": 0,
+      "minute_coverage": {
+        "QQQ": {
+          "observed": 390,
+          "expected": 390,
+          "coverage": 1.0
+        },
+        "SPY": {
+          "observed": 390,
+          "expected": 390,
+          "coverage": 1.0
+        }
+      },
+      "fetch_to_known_lag_seconds": {
+        "bars": {
+          "batches": 792,
+          "p50": 0.0733705,
+          "p95": 0.10841354999999998
+        },
+        "chain": {
+          "batches": 756,
+          "p50": 1.0620595000000002,
+          "p95": 2.87666575
+        },
+        "derived": {
+          "batches": 741,
+          "p50": 0.038304,
+          "p95": 0.071236
+        },
+        "reference": {
+          "batches": 2,
+          "p50": 0.0176175,
+          "p95": 0.02411145
+        }
+      },
+      "option_rows": 242743,
+      "quote_event_time_known_ratio": 0.0
+    },
+    {
+      "session_date": "2026-10-27",
+      "open_at": "2026-10-27T13:30:00+00:00",
+      "close_at": "2026-10-27T20:00:00+00:00",
+      "requests": {
+        "endpoint": 1549,
+        "transport": 0,
+        "runs": 1412,
+        "effective_per_minute": 3.442,
+        "session_per_minute": 3.972,
+        "peak_per_minute": 10.89
+      },
+      "errors": {
+        "circuit_open": 10,
+        "unavailable": 3
+      },
+      "chain_scopes": [
+        {
+          "symbol": "QQQ",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        },
+        {
+          "symbol": "SPY",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        }
+      ],
+      "skipped_slots": 0,
+      "minute_coverage": {
+        "QQQ": {
+          "observed": 390,
+          "expected": 390,
+          "coverage": 1.0
+        },
+        "SPY": {
+          "observed": 390,
+          "expected": 390,
+          "coverage": 1.0
+        }
+      },
+      "fetch_to_known_lag_seconds": {
+        "bars": {
+          "batches": 788,
+          "p50": 0.07383300000000001,
+          "p95": 0.10911484999999999
+        },
+        "chain": {
+          "batches": 756,
+          "p50": 1.370326,
+          "p95": 3.33657375
+        },
+        "derived": {
+          "batches": 739,
+          "p50": 0.039007,
+          "p95": 0.0730916
+        },
+        "reference": {
+          "batches": 2,
+          "p50": 0.0336615,
+          "p95": 0.05333505
+        }
+      },
+      "option_rows": 241720,
+      "quote_event_time_known_ratio": 0.0
+    },
+    {
+      "session_date": "2026-10-28",
+      "open_at": "2026-10-28T13:30:00+00:00",
+      "close_at": "2026-10-28T20:00:00+00:00",
+      "requests": {
+        "endpoint": 1561,
+        "transport": 0,
+        "runs": 1413,
+        "effective_per_minute": 3.469,
+        "session_per_minute": 4.003,
+        "peak_per_minute": 10.9
+      },
+      "errors": {
+        "unavailable": 5
+      },
+      "chain_scopes": [
+        {
+          "symbol": "QQQ",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        },
+        {
+          "symbol": "SPY",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        }
+      ],
+      "skipped_slots": 0,
+      "minute_coverage": {
+        "QQQ": {
+          "observed": 390,
+          "expected": 390,
+          "coverage": 1.0
+        },
+        "SPY": {
+          "observed": 390,
+          "expected": 390,
+          "coverage": 1.0
+        }
+      },
+      "fetch_to_known_lag_seconds": {
+        "bars": {
+          "batches": 798,
+          "p50": 0.0743665,
+          "p95": 0.10871945
+        },
+        "chain": {
+          "batches": 756,
+          "p50": 1.932543,
+          "p95": 3.50324075
+        },
+        "derived": {
+          "batches": 748,
+          "p50": 0.040343,
+          "p95": 0.07054049999999999
+        },
+        "reference": {
+          "batches": 2,
+          "p50": 0.012539999999999999,
+          "p95": 0.0183504
+        }
+      },
+      "option_rows": 305924,
+      "quote_event_time_known_ratio": 0.0
+    },
+    {
+      "session_date": "2026-10-29",
+      "open_at": "2026-10-29T13:30:00+00:00",
+      "close_at": "2026-10-29T20:00:00+00:00",
+      "requests": {
+        "endpoint": 1554,
+        "transport": 0,
+        "runs": 1413,
+        "effective_per_minute": 3.453,
+        "session_per_minute": 3.985,
+        "peak_per_minute": 10.84
+      },
+      "errors": {
+        "circuit_open": 10,
+        "unavailable": 4
+      },
+      "chain_scopes": [
+        {
+          "symbol": "QQQ",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        },
+        {
+          "symbol": "SPY",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        }
+      ],
+      "skipped_slots": 0,
+      "minute_coverage": {
+        "QQQ": {
+          "observed": 390,
+          "expected": 390,
+          "coverage": 1.0
+        },
+        "SPY": {
+          "observed": 390,
+          "expected": 390,
+          "coverage": 1.0
+        }
+      },
+      "fetch_to_known_lag_seconds": {
+        "bars": {
+          "batches": 788,
+          "p50": 0.0737865,
+          "p95": 0.1072103
+        },
+        "chain": {
+          "batches": 760,
+          "p50": 2.0085344999999997,
+          "p95": 4.36924565
+        },
+        "derived": {
+          "batches": 742,
+          "p50": 0.040361999999999995,
+          "p95": 0.0745509499999999
+        },
+        "reference": {
+          "batches": 2,
+          "p50": 0.013268499999999999,
+          "p95": 0.02014315
+        }
+      },
+      "option_rows": 334332,
+      "quote_event_time_known_ratio": 0.0
+    },
+    {
+      "session_date": "2026-10-30",
+      "open_at": "2026-10-30T13:30:00+00:00",
+      "close_at": "2026-10-30T20:00:00+00:00",
+      "requests": {
+        "endpoint": 1608,
+        "transport": 0,
+        "runs": 1414,
+        "effective_per_minute": 3.573,
+        "session_per_minute": 4.123,
+        "peak_per_minute": 10.73
+      },
+      "errors": {
+        "circuit_open": 10,
+        "unavailable": 5
+      },
+      "chain_scopes": [
+        {
+          "symbol": "QQQ",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        },
+        {
+          "symbol": "SPY",
+          "expiration": null,
+          "intended": 78,
+          "skipped": 0,
+          "partial": 0,
+          "failed": 0,
+          "on_time": 78,
+          "coverage": 1.0
+        }
+      ],
+      "skipped_slots": 0,
+      "minute_coverage": {
+        "QQQ": {
+          "observed": 384,
+          "expected": 390,
+          "coverage": 0.9846153846153847
+        },
+        "SPY": {
+          "observed": 324,
+          "expected": 390,
+          "coverage": 0.8307692307692308
+        }
+      },
+      "fetch_to_known_lag_seconds": {
+        "bars": {
+          "batches": 845,
+          "p50": 0.071827,
+          "p95": 0.113068
+        },
+        "chain": {
+          "batches": 756,
+          "p50": 2.028894,
+          "p95": 4.817308000000001
+        },
+        "derived": {
+          "batches": 591,
+          "p50": 0.029056,
+          "p95": 0.0679845
+        },
+        "reference": {
+          "batches": 2,
+          "p50": 0.018105,
+          "p95": 0.028676399999999998
+        }
+      },
+      "option_rows": 333861,
+      "quote_event_time_known_ratio": 0.0
+    }
+  ],
+  "storage": {
+    "table_bytes": {
+      "bar_observations": 51863552,
+      "option_snapshots": 1201602560,
+      "underlying_marks": 0
+    },
+    "rows": {
+      "bar_observations": 33799,
+      "option_snapshots": 1458580,
+      "underlying_marks": 0
+    },
+    "bytes_per_row_with_indexes": {
+      "bar_observations": 1534.4700139057368,
+      "option_snapshots": 823.8166984327222,
+      "underlying_marks": null
+    },
+    "database_bytes": 1302853311,
+    "payload_bytes": 457611369,
+    "archive_bytes": 0,
+    "wal_bytes_since_stats_reset": 10340573237,
+    "wal_stats_reset": "2026-10-26 02:06:59.042719+00:00",
+    "sessions_stored": 10
+  },
+  "headroom": {
+    "local_bytes": 1760464680,
+    "bytes_per_session": 176046468.0,
+    "available_bytes_by_limit": {
+      "disk:/data": 24146197708.800003,
+      "MAX_LOCAL_DATA_GIB": 41189208280
+    },
+    "projected_headroom_days": 192.02132923405202,
+    "basis": "local DB+payload+archive bytes / sessions stored; stop-bulk at 80% disk"
+  },
+  "summary": {
+    "sessions_measured": 5,
+    "min_scope_chain_coverage": 0.9871794871794872,
+    "skipped_slots": 0,
+    "min_minute_coverage": 0.8307692307692308,
+    "max_fetch_to_known_p95_seconds": 4.817308000000001,
+    "peak_requests_per_minute": 10.9,
+    "request_budget_utilization": 1.09,
+    "planned_request_utilization": 0.4123,
+    "quote_event_time_known_ratio": 0.0,
+    "freshness_claim": "collection_cadence_only",
+    "verified_backups_during_sessions": 5
+  },
+  "uncertainty": [
+    "One measured week may be unrepresentative (events, expiries, volatility).",
+    "Provider throttling behaviour is observed, not documented; limits may change.",
+    "Quote event times are unknown unless the provider supplies them."
+  ]
+}

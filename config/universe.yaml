@@ -1,0 +1,25 @@
+# Collection universe (no secrets). Default: synthetic fake provider.
+# Changing this file creates a new policy version; old datasets keep the old one.
+version: 1
+provider: fake
+symbols:
+  - {symbol: SYNA, asset_class: etf}
+  - {symbol: SYNB, asset_class: etf}
+options:
+  priority_expiries: 4          # distinct expiries nearest the targets, inside the band
+  dte_targets: [30, 45, 60, 90] # calendar days to expiration
+  dte_min: 30
+  dte_max: 90
+  other_expiries_max: 6         # hourly scope ceiling
+  broad_expiries_max: 24        # daily sweep ceiling
+  retention: all_returned       # v1 stores every contract of a selected expiry
+  old_last_trade_minutes: 60
+  iv_plausible_max: 5.0         # reported IV above 500% is flagged invalid_iv
+bars:
+  minute_overlap_minutes: 20
+  minute_safe_lag_seconds: 80
+  publication_grace_minutes: 3
+  daily_history_years: 5
+  daily_chunk_overlap_days: 5
+  minute_bootstrap_days: 7
+  max_repair_cycles: 3

@@ -1,0 +1,85 @@
+{
+  "null_rates": {
+    "SYNA:2025-04-11:cold_or_first": {
+      "ask": 0.0,
+      "ask_size": 1.0,
+      "bid": 0.0417,
+      "bid_size": 1.0,
+      "last": 0.0,
+      "last_trade_at": 0.0417,
+      "provider_event_at": 1.0,
+      "reported_iv": 0.0,
+      "reported_open_interest": 0.0417,
+      "reported_volume": 0.0417
+    },
+    "SYNA:2025-04-11:warm": {
+      "ask": 0.0,
+      "ask_size": 1.0,
+      "bid": 0.0417,
+      "bid_size": 1.0,
+      "last": 0.0,
+      "last_trade_at": 0.0417,
+      "provider_event_at": 1.0,
+      "reported_iv": 0.0,
+      "reported_open_interest": 0.0417,
+      "reported_volume": 0.0417
+    },
+    "SYNB:2025-04-11:cold_or_first": {
+      "ask": 0.0,
+      "ask_size": 1.0,
+      "bid": 0.0417,
+      "bid_size": 1.0,
+      "last": 0.0,
+      "last_trade_at": 0.0417,
+      "provider_event_at": 1.0,
+      "reported_iv": 0.0,
+      "reported_open_interest": 0.0417,
+      "reported_volume": 0.0417
+    },
+    "SYNB:2025-04-11:warm": {
+      "ask": 0.0,
+      "ask_size": 1.0,
+      "bid": 0.0417,
+      "bid_size": 1.0,
+      "last": 0.0,
+      "last_trade_at": 0.0417,
+      "provider_event_at": 1.0,
+      "reported_iv": 0.0,
+      "reported_open_interest": 0.0417,
+      "reported_volume": 0.0417
+    }
+  },
+  "observed_probe_requests": {
+    "endpoint": 12,
+    "transport": 12
+  },
+  "planned": {
+    "bar_calls": 780,
+    "boundary_spread_seconds": 60.0,
+    "boundary_tokens": 10,
+    "chain_calls": 708,
+    "feasible": true,
+    "inputs": {
+      "broad_extra_calls": 12,
+      "daily_calls_per_symbol": 2,
+      "discovery_calls_per_symbol": 1,
+      "hourly_polls": 7,
+      "minute_polls": 390,
+      "other_expiries": 6,
+      "planned_utilization": 0.7,
+      "priority_expiries": 4,
+      "priority_polls": 78,
+      "repair_calls": 16,
+      "requests_per_minute": 10,
+      "session_minutes": 390,
+      "symbols": 2
+    },
+    "mean_per_minute": 3.903,
+    "note": "Estimate excludes hidden transport/cookie/retry overhead; it is a lower bound, not a measured or provider-approved rate.",
+    "other_calls": 34,
+    "planned_capacity": 2730,
+    "reasons": [],
+    "total_calls": 1522,
+    "utilization": 0.3903
+  }
+}

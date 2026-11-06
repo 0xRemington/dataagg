@@ -1,0 +1,213 @@
+{
+  "actions": {
+    "checked_at": "2026-10-24T00:00:00Z",
+    "confidence": "documented",
+    "evidence": "yfinance 1.7.0 scrapers/history.py; intervals per yfinance reference",
+    "status": "supported"
+  },
+  "bars": {
+    "15m": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "documented",
+        "evidence": "derived locally (ADR-006)",
+        "status": "unsupported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    },
+    "1d": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "documented",
+        "evidence": "yfinance 1.7.0 scrapers/history.py; intervals per yfinance reference",
+        "status": "supported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    },
+    "1m": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "documented",
+        "evidence": "yfinance 1.7.0 scrapers/history.py; intervals per yfinance reference",
+        "status": "supported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    },
+    "4h": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "documented",
+        "evidence": "no 4h interval documented",
+        "status": "unsupported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    },
+    "5m": {
+      "available": {
+        "checked_at": "2026-10-24T00:00:00Z",
+        "confidence": "documented",
+        "evidence": "derived locally (ADR-006)",
+        "status": "unsupported"
+      },
+      "limits": {
+        "checked_at": null,
+        "confidence": "unknown",
+        "evidence": null,
+        "status": "unknown"
+      },
+      "max_request_span_seconds": null,
+      "oldest_history_seconds": null
+    }
+  },
+  "capability_version": "yahoo-capabilities/1",
+  "contract_reference": {
+    "deliverable": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    },
+    "exercise_style": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    },
+    "expiry_cutoff": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    },
+    "multiplier": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    }
+  },
+  "entitlements": {
+    "automated_collection_allowed": null,
+    "display_allowed": null,
+    "export_allowed": null,
+    "max_retention_days": null,
+    "notes": "Unofficial package; Yahoo terms/automation/retention rights unverified (planning could not retrieve terms). A review id records a decision; it does not grant rights.",
+    "review_expires_at": null,
+    "review_id": "operator-2026-10-26",
+    "reviewed": true
+  },
+  "options": {
+    "current_chain": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "yfinance 1.7.0 ticker.py option_chain/_options2df (source read)",
+      "status": "supported"
+    },
+    "historical_snapshots": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "no historical chain endpoint in yfinance",
+      "status": "unsupported"
+    },
+    "streaming_quotes": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "chain polling adapter only",
+      "status": "unsupported"
+    }
+  },
+  "provider_id": "yahoo",
+  "quotes": {
+    "event_time": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "yfinance 1.7.0 ticker.py option_chain/_options2df (source read): no quote timestamp column",
+      "status": "unsupported"
+    },
+    "replay": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "yfinance 1.7.0 ticker.py option_chain/_options2df (source read)",
+      "status": "unsupported"
+    },
+    "sequence": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "yfinance 1.7.0 ticker.py option_chain/_options2df (source read)",
+      "status": "unsupported"
+    },
+    "sizes": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "yfinance 1.7.0 ticker.py option_chain/_options2df (source read): no bid/ask size columns",
+      "status": "unsupported"
+    }
+  },
+  "reliability_tier": "unofficial_delayed",
+  "request_limits": {
+    "evidence": {
+      "checked_at": null,
+      "confidence": "unknown",
+      "evidence": null,
+      "status": "unknown"
+    },
+    "max_concurrency": null,
+    "max_subscriptions": null,
+    "requests_per_minute": null
+  },
+  "schema_version": 1,
+  "semantics": {
+    "adjustment_basis": "provider_native",
+    "evidence": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "auto_adjust=False, prepost=False passed explicitly",
+      "status": "supported"
+    },
+    "oi_semantics": null,
+    "session_coverage": [
+      "RTH"
+    ],
+    "volume_semantics": "unknown"
+  },
+  "synthetic": false,
+  "timing": {
+    "advertised_delay_seconds": 900,
+    "delay_kind": "delayed",
+    "evidence": {
+      "checked_at": "2026-10-24T00:00:00Z",
+      "confidence": "documented",
+      "evidence": "https://help.yahoo.com/kb/SLN2310.html (OPRA listed as 15-minute delay)",
+      "status": "supported"
+    },
+    "timestamp_precision": "unknown"
+  }
+}

@@ -1,0 +1,28 @@
+# Research and collection policies (02, 03). Project defaults, not provider facts.
+version: 1
+age_limits:                     # observation age ceilings per descriptive panel
+  1m:  {option_seconds: 420,  spot_seconds: 180}
+  5m:  {option_seconds: 420,  spot_seconds: 180}
+  15m: {option_seconds: 1200, spot_seconds: 180}
+  4h:  {option_seconds: 1200, spot_seconds: 300}
+  1d:  {option_seconds: 1200, spot_seconds: 300}
+retry:
+  max_attempts: 3
+  base_seconds: 2
+  cap_seconds: 60
+  rate_limit_cooldown_seconds: 900
+  rate_limit_cooldown_max_seconds: 7200
+  schema_change_cooldown_seconds: 3600
+  unavailable_failures_to_open: 5
+  unavailable_cooldown_seconds: 300
+schedule:
+  lease_seconds: 180
+  heartbeat_seconds: 20
+  provider_timeout_seconds: 30
+  priority_chain_deadline_seconds: 120
+  backlog_shed_threshold: 50
+  session_minutes: 390
+max_observation_skew_seconds: 120
+reconciliation_price_abs: "0.01"
+reconciliation_price_rel: 0.00001
+reconciliation_volume_rel: 0.01

@@ -1,0 +1,238 @@
+# Single-VPS deployment (06).
+# - The database has no host port and lives on the internal (no-egress) network.
+# - Only the proxy publishes a port: 0.0.0.0:${MARKETAGG_PUBLIC_PORT:-8000}, reachable
+#   only over Tailscale (deploy/firewall.sh, 2026-10-27). It serves the
+#   dashboard behind basic auth and the token-authenticated API under /v1.
+# - API/UI publish no host ports: containers only on an internal network cannot publish,
+#   and the proxy is the single entry point (SSH tunnels can target it too).
+# - Only the worker (Yahoo fetches), binance (Binance stream) and the proxy join egress.
+# - Secrets are mounted files, never environment values or CLI arguments.
+# Memory limits fit a 2 vCPU / 3 GiB host plus 2 GiB swap (constrained variant).
+# Images are pinned by digest (looked up 2026-10-25); re-pin deliberately on upgrade.
+name: marketagg
+
+x-app: &app
+  image: marketagg:local
+  build:
+    context: ..
+    dockerfile: deploy/Dockerfile
+  env_file: ../.env
+  environment:
+    DATABASE_URL_FILE: /run/secrets/database_url
+    API_READ_TOKEN_FILE: /run/secrets/api_read_token
+    API_EXPORT_TOKEN_FILE: /run/secrets/api_export_token
+    BACKUP_KEY_FILE: /run/secrets/backup_key
+    DATA_ROOT: /data
+  secrets: [database_url, api_read_token, api_export_token, backup_key]
+  group_add: ["10050"]  # read access to mounted secret files (deploy/setup_secrets.sh)
+  volumes:
+    - appdata:/data
+  networks: [internal]
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  restart: unless-stopped
+  stop_grace_period: 60s  # finish or abort fenced transactions
+  logging:
+    driver: json-file
+    options: {max-size: "20m", max-file: "7"}
+
+services:
+  db:
+    image: postgres:18.1-bookworm@sha256:cc9f4143a8d2fa8cf3749d0cb4d26ecf2d53a77a2ac807e9ebd67ae22426221a
+    environment:
+      POSTGRES_DB: marketagg
+      POSTGRES_USER: marketagg_owner
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_owner_password
+    secrets: [db_owner_password]
+    command:
+      - postgres
+      - -c
+      - shared_buffers=256MB
+      - -c
+      - max_connections=40
+      - -c
+      - log_checkpoints=on
+    volumes:
+      - pgdata:/var/lib/postgresql
+    networks: [internal]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U marketagg_owner -d marketagg"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    deploy:
+      resources:
+        limits: {memory: 1g}
+    restart: unless-stopped
+    stop_grace_period: 120s
+    shm_size: 256m
+
+  migrate:
+    <<: *app
+    command: ["migrate", "--profile", "production", "--bootstrap"]
+    restart: "no"
+    secrets: [database_url_owner]
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_url_owner
+      DATA_ROOT: /data
+    depends_on:
+      db: {condition: service_healthy}
+    deploy:
+      resources:
+        limits: {memory: 256m}
+
+  scheduler:
+    <<: *app
+    command: ["scheduler", "--profile", "production", "--id", "scheduler-1"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    deploy:
+      resources:
+        limits: {memory: 256m}
+
+  worker:
+    <<: *app
+    command: ["worker", "--profile", "production", "--id", "worker-1"]
+    networks: [internal, egress]  # the only app service that reaches the provider
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    deploy:
+      resources:
+        limits: {memory: 768m}
+
+  binance-bootstrap:  # UPDATE2: one-shot; owner role registers provider/policy/BTCUSDT
+    <<: *app
+    command: ["binance", "bootstrap", "--profile", "production"]
+    restart: "no"
+    secrets: [database_url_owner]
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_url_owner
+      DATA_ROOT: /data
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    deploy:
+      resources:
+        limits: {memory: 256m}
+
+  binance:  # UPDATE2: BTCUSDT klines (1m 5m 15m 4h 1d) over Binance WebSocket + REST gap fill
+    <<: *app
+    command: ["binance", "stream", "--profile", "production"]
+    networks: [internal, egress]  # reaches data-stream/data-api.binance.vision
+    depends_on:
+      binance-bootstrap: {condition: service_completed_successfully}
+    deploy:
+      resources:
+        limits: {memory: 256m}
+
+  api:
+    <<: *app
+    command: ["api", "serve", "--profile", "production"]
+    secrets: [database_url_api, api_read_token, api_export_token]
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_url_api
+      API_READ_TOKEN_FILE: /run/secrets/api_read_token
+      API_EXPORT_TOKEN_FILE: /run/secrets/api_export_token
+      DATA_ROOT: /data
+      API_BIND_HOST: 0.0.0.0  # inside the container; reached only via the proxy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health/live').status == 200 else 1)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    deploy:
+      resources:
+        limits: {memory: 384m}
+
+  ui:
+    <<: *app
+    entrypoint: ["streamlit", "run", "/app/ui/app.py", "--server.address=0.0.0.0",
+                 "--server.port=8501", "--server.headless=true",
+                 "--browser.gatherUsageStats=false"]
+    command: []
+    environment:
+      MARKETAGG_API_URL: http://api:8000
+      API_READ_TOKEN_FILE: /run/secrets/api_read_token
+    secrets: [api_read_token]  # the UI has no database credentials
+    volumes: []
+    depends_on:
+      api: {condition: service_healthy}
+    deploy:
+      resources:
+        limits: {memory: 384m}
+
+  proxy:
+    image: caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+    command: ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
+    volumes:
+      - ../secrets/Caddyfile:/etc/caddy/Caddyfile:ro  # rendered by deploy/setup_secrets.sh
+    ports:
+      - "0.0.0.0:${MARKETAGG_PUBLIC_PORT:-8000}:8000"  # public IPv4 entry point
+    networks: [internal, egress]
+    read_only: true
+    tmpfs: [/tmp, /data, /config]
+    cap_drop: [ALL]
+    cap_add: [NET_BIND_SERVICE]  # the caddy binary carries this file capability; exec fails without it
+    security_opt: ["no-new-privileges:true"]
+    depends_on:
+      api: {condition: service_healthy}
+      ui: {condition: service_started}
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options: {max-size: "20m", max-file: "7"}
+    deploy:
+      resources:
+        limits: {memory: 128m}
+
+  backup:
+    <<: *app
+    profiles: [ops]
+    command: ["ops", "backup", "--profile", "production", "--verify"]
+    restart: "no"
+    secrets: [database_url_backup, backup_key]
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_url_backup
+      BACKUP_KEY_FILE: /run/secrets/backup_key
+      DATA_ROOT: /data
+    volumes:
+      - appdata:/data:ro
+      - backups:/backups
+
+  pilot-report:  # T19: measure the five-session pilot from recorded facts
+    <<: *app
+    profiles: [ops]
+    entrypoint: ["python", "/app/scripts/measure_capacity.py"]
+    command: ["--sessions", "5", "--output", "/out", "--profile", "production"]
+    restart: "no"
+    user: "1000:1000"  # writes into the operator's reports/pilot directory
+    secrets: [database_url_api]
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_url_api
+      DATA_ROOT: /data
+    volumes:
+      - appdata:/data:ro
+      - ../reports/pilot:/out
+
+networks:
+  internal:
+    internal: true
+  egress: {}
+
+volumes:
+  pgdata: {}
+  appdata: {}
+  backups: {}
+
+secrets:
+  db_owner_password: {file: ../secrets/db_owner_password}
+  database_url_owner: {file: ../secrets/database_url_owner}
+  database_url: {file: ../secrets/database_url}  # ingest role (scheduler/worker)
+  database_url_api: {file: ../secrets/database_url_api}  # reader + export roles
+  database_url_backup: {file: ../secrets/database_url_backup}
+  api_read_token: {file: ../secrets/api_read_token}
+  api_export_token: {file: ../secrets/api_export_token}
+  backup_key: {file: ../secrets/backup_key}
